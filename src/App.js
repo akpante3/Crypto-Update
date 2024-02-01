@@ -5,6 +5,7 @@ import Coinpage from "./pages/Coinpage";
 import { makeStyles } from "@mui/styles";
 
 import "./App.css";
+import { createTheme } from "@mui/material";
 
 
 const useStyles = makeStyles(() => ({
@@ -20,9 +21,9 @@ function App() {
   const classes = useStyles();
 
   return (
-    <div>
-      <Header />
+    <div className={classes.App }>
       <BrowserRouter>
+        <Header />
         <Routes>
           <Route path="/" element={<Homepage/>}  />
           <Route path="/coins/:id" element={<Coinpage/>} />
