@@ -4,11 +4,11 @@ const Crypto = createContext()
 
 
 const Context = ({children}) => {
-    const [currency, setCurrency] = useState('INR')
+    const [currency, setCurrency] = useState('NGN')
     const[symbol, setSymbol] = useState("₹")
 
     useEffect(() => {
-        if (currency === "INR") setSymbol("₹");
+        if (currency === "NGN") setSymbol("₹");
         else if (currency === "USD") setSymbol("$");
       }, [currency]);
 
