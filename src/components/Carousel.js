@@ -36,53 +36,63 @@ const Carousel = () => {
   };
 
   const responsive = {
-    0:{
-        items:3
+    0: {
+      items: 3,
     },
     512: {
-        items: 4
+      items: 4,
     },
-  }
+  };
 
   const items = trending.map((coin) => {
     let profit = coin?.price_change_percentage_24h >= 0;
 
     return (
-        <Link
-        className={classes.carouselItem}
-        to={`/coins/${coin.id}`}
-        >
+      <Link className={classes.carouselItem} to={`/coins/${coin.id}`}>
         <img
           src={coin?.image}
           alt={coin.name}
           height="80"
           style={{ marginBottom: 10 }}
         />
-        </Link>
-    //   <Link className={classes.carouselItem} to={`/coins/${coin.id}`}>
-    //     <img
-    //       src={coin?.image}
-    //       alt={coin.name}
-    //       height="80"
-    //       style={{ marginBottom: 10 }}
-    //     />
-    //     <span>
-    //       {coin?.symbol}
-    //       &nbsp;
-    //       <span
-    //         style={{
-    //           color: profit > 0 ? "rgb(14, 203, 129)" : "red",
-    //           fontWeight: 500,
-    //         }}
-    //       >
-    //         {profit && "+"}
-    //         {coin?.price_change_percentage_24h?.toFixed(2)}%
-    //       </span>
-    //     </span>
-    //     <span style={{ fontSize: 22, fontWeight: 500 }}>
-    //       {symbol} {numberWithCommas(coin?.current_price.toFixed(2))}
-    //     </span>
-    //   </Link>
+        <span>
+          {coin?.symbol}
+          &nbsp;
+          <span
+            style={{
+              color: profit > 0 ? "rgb(14, 203, 129)" : "red",
+              fontWeight: 500,
+            }}
+          >
+            {profit && "+"}
+            {coin?.price_change_percentage_24h?.toFixed(2)}%
+          </span>
+        </span>
+      </Link>
+      //   <Link className={classes.carouselItem} to={`/coins/${coin.id}`}>
+      //     <img
+      //       src={coin?.image}
+      //       alt={coin.name}
+      //       height="80"
+      //       style={{ marginBottom: 10 }}
+      //     />
+      //     <span>
+      //       {coin?.symbol}
+      //       &nbsp;
+      //       <span
+      //         style={{
+      //           color: profit > 0 ? "rgb(14, 203, 129)" : "red",
+      //           fontWeight: 500,
+      //         }}
+      //       >
+      //         {profit && "+"}
+      //         {coin?.price_change_percentage_24h?.toFixed(2)}%
+      //       </span>
+      //     </span>
+      //     <span style={{ fontSize: 22, fontWeight: 500 }}>
+      //       {symbol} {numberWithCommas(coin?.current_price.toFixed(2))}
+      //     </span>
+      //   </Link>
     );
   });
 
@@ -90,9 +100,10 @@ const Carousel = () => {
     fetchTrendingCoins();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currency]);
-  
-  return <div className={classes.carousel}> 
-    <AliceCarousel
+
+  return (
+    <div className={classes.carousel}>
+      <AliceCarousel
         animationDuration={1500}
         mouseTracking
         infinite
@@ -101,8 +112,9 @@ const Carousel = () => {
         responsive={responsive}
         autoPlay
         items={items}
-    />
-  </div>;
+      />
+    </div>
+  );
 };
 
 export default Carousel;
