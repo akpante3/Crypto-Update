@@ -92,6 +92,7 @@ const Carousel = () => {
         infinite
         autoPlayInterval={1000}
         disableDotsControls
+        disableButtonsControls
         responsive={responsive}
         autoPlay
         items={items}
