@@ -107,7 +107,7 @@ const CoinsTable = () => {
             <LinearProgress style={{ backgroundColor: "gold" }} />
           ) : (
             <Table aria-label="simple table">
-              <TableHead style={{ backgroundColor: "#EEBC1D" }}>
+              <TableHead style={{ backgroundColor: "#0d8cf1" }}>
                 <TableRow>
                   {["Coin", "Price", "24h Change", "Market Cap"].map((head) => (
                     <TableCell
@@ -117,8 +117,7 @@ const CoinsTable = () => {
                         fontFamily: "Montserrat",
                       }}
                       key={head}
-                    //   align={head === "Coin" ? "" : "right"}
-                    align="right"
+                      align={head === "Coin" ? "" : "right"}
                     >
                       {head}
                     </TableCell>
@@ -158,6 +157,7 @@ const CoinsTable = () => {
                               style={{
                                 textTransform: "uppercase",
                                 fontSize: 22,
+                                color: "darkgrey"
                               }}
                             >
                               {row.symbol}
@@ -167,7 +167,7 @@ const CoinsTable = () => {
                             </span>
                           </div>
                         </TableCell>
-                        <TableCell align="right">
+                        <TableCell align="right" style={{ color: "darkgrey" }}>
                           {symbol}{" "}
                           {numberWithCommas(row.current_price.toFixed(2))}
                         </TableCell>
@@ -181,7 +181,7 @@ const CoinsTable = () => {
                           {profit && "+"}
                           {row.price_change_percentage_24h.toFixed(2)}%
                         </TableCell>
-                        <TableCell align="right">
+                        <TableCell align="right"  style={{ color: "darkgrey" }}>
                           {symbol}{" "}
                           {numberWithCommas(
                             row.market_cap.toString().slice(0, -6)
