@@ -16,7 +16,7 @@ import { ContextState } from "../Context";
 const useStyle = makeStyles(() => ({
   title: {
     flex: 1,
-    color: "gold",
+    color: "#0d8cf1",
     fontFamily: "Montserrat",
     fontWeight: "bold",
     cursor: "pointer",
@@ -55,7 +55,7 @@ const Header = () => {
         <Container>
           <Toolbar>
             <Typography variant="h6" onClick={handleClick} className={classes.title}>
-              Cryto
+            Crypto
             </Typography>
             <Select
               variant="standard"

@@ -12,6 +12,7 @@ import {
     TableContainer,
     Table,
     Paper,
+    Pagination
   } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 import axios from "axios";
@@ -32,7 +33,7 @@ const useStyles = makeStyles(() => ({
       },
       pagination: {
         "& .MuiPaginationItem-root": {
-          color: "gold",
+          color: "white",
         },
       },
 }));
@@ -197,7 +198,7 @@ const CoinsTable = () => {
         </TableContainer>
 
         {/* Comes from @material-ui/lab */}
-        {/* <Pagination
+        <Pagination
           count={(handleSearch()?.length / 10).toFixed(0)}
           style={{
             padding: 20,
@@ -210,7 +211,7 @@ const CoinsTable = () => {
             setPage(value);
             window.scroll(0, 450);
           }}
-        /> */}
+        />
       </Container>
     </ThemeProvider>
   );

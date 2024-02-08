@@ -40,11 +40,11 @@ const Banner = () => {
                 fontFamily:"montserrat",
                 marginTop: 25
             }}> Crypto Tracker</Typography>
-            <Typography variant="h2" style={{
+            {/* <Typography variant="h2" style={{
                 color:"darkgrey",
                 textTransform:"capitalize",
                 fontFamily:"montserrat",
-            }}> All info concerning your favorite Crypto Currency</Typography>
+            }}> All info concerning your favorite Crypto Currency</Typography> */}
         </div>
       </Container>
       <Carousel/>
