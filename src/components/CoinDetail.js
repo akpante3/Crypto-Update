@@ -1,7 +1,7 @@
 import { Typography, LinearProgress } from "@mui/material";
 import { styled } from "@mui/system";
 import React, { useEffect, useState } from "react";
-// import ReactHtmlParser from "react-html-parser";
+import CoinInfo from "./CoinInfo";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import { ContextState } from "../Context";
@@ -146,6 +146,7 @@ const CoinDetail = () => {
           </span>
         </MarketData>
       </Sidebar>
+      <CoinInfo />
     </CoinDetailContainer>
   );
 };
