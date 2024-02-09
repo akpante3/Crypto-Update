@@ -18,3 +18,5 @@ const CoinInfo = () => {
 };
 
 export default CoinInfo;
+
+
