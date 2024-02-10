@@ -86,6 +86,7 @@ const CoinsTable = () => {
 
   useEffect(()=> {
     getCoins()
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currency])
 
   return (

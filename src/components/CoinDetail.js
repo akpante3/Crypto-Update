@@ -7,6 +7,7 @@ import { useParams } from "react-router-dom";
 import { ContextState } from "../Context";
 import { SingleCoin } from "../config/api";
 import { numberWithCommas } from "./CoinsTable";
+import CoinInfo from "./CoinInfo";
 
 // import useMediaQuery from '@mui/material/useMediaQuery'
 
@@ -146,6 +147,7 @@ const CoinDetail = () => {
           </span>
         </MarketData>
       </Sidebar>
+      <CoinInfo />
     </CoinDetailContainer>
   );
 };
