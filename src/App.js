@@ -2,26 +2,21 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Header from "./components/Header";
 import Homepage from "./pages/Homepage";
 import Coinpage from "./pages/CoinPage";
-import { makeStyles } from "@mui/styles";
+import { styled } from "@mui/system";
 
 import "./App.css";
 
 
-
-const useStyles = makeStyles(() => ({
-  App: {
-    backgroundColor: "#14161a",
-    color: "white",
-    minHeight: "100vh",
-  },
+const AppContainer = styled("div")(({ theme }) => ({
+  backgroundColor: "#14161a",
+  color: "white",
+  minHeight: "100vh",
 }));
 
 function App() {
 
-  const classes = useStyles();
-
   return (
-    <div className={classes.App }>
+    <AppContainer>
       <BrowserRouter>
         <Header />
         <Routes>
@@ -29,7 +24,7 @@ function App() {
           <Route path="/coins/:id" element={<Coinpage/>} />
         </Routes>
       </BrowserRouter>
-    </div>
+    </AppContainer>
   );
 }
 

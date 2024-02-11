@@ -1,54 +1,60 @@
 import { Container, Typography } from "@mui/material";
-import { makeStyles } from "@mui/styles";
+import { styled } from "@mui/system";
 import React from "react";
 import Carousel from "./Carousel";
 
-const useStyles = makeStyles(() => ({
-  banner: {
-    backgroundImage: "url(./banner.jpeg)",
-    backgroundRepeat: "no-repeat",
-    minWidth: "100%",
-    backgroundPosition: "center",
-    backgroundSize: "cover"
-  },
-  tagline: {
-    display: "flex",
-    height: "40%",
-    flexDirection: "column",
-    justifyContent: "center",
-    textAlign: "center",
-  },
-  bannerContent: {
-    height: 400,
-    display: "flex",
-    flexDirection: "column",
-    paddingTop: 25,
-    justifyContent: "space-around",
-    
-  },
+const BannerContent = styled("div")(({ theme }) => ({
+  height: 400,
+  display: "flex",
+  flexDirection: "column",
+  paddingTop: 25,
+  justifyContent: "space-around",
+}));
+
+const Tagline = styled("div")(({ theme }) => ({
+  display: "flex",
+  height: "40%",
+  flexDirection: "column",
+  justifyContent: "center",
+  textAlign: "center",
+}));
+
+const BannerContanier = styled("div")(({ theme }) => ({
+  backgroundImage: "url(./banner.jpeg)",
+  backgroundRepeat: "no-repeat",
+  minWidth: "100%",
+  backgroundPosition: "center",
+  backgroundSize: "cover",
 }));
 
 const Banner = () => {
-  const classes = useStyles();
   return (
-    <div className={classes.banner}>
-      <Container className={classes.bannerContent}>
-        <div  className={classes.tagline}>
-            <Typography variant="h2" style={{
-                fontWeight:"bold",
+    <BannerContanier >
+      <Container>
+        <BannerContent>
+          <Tagline>
+            <Typography
+              variant="h2"
+              style={{
+                fontWeight: "bold",
                 marginBottom: 15,
-                fontFamily:"montserrat",
-                marginTop: 25
-            }}> Crypto Tracker</Typography>
+                fontFamily: "montserrat",
+                marginTop: 25,
+              }}
+            >
+              {" "}
+              Crypto Tracker
+            </Typography>
             {/* <Typography variant="h2" style={{
                 color:"darkgrey",
                 textTransform:"capitalize",
                 fontFamily:"montserrat",
             }}> All info concerning your favorite Crypto Currency</Typography> */}
-        </div>
+          </Tagline>
+        </BannerContent>
       </Container>
-      <Carousel/>
-    </div>
+      <Carousel />
+    </BannerContanier >
   );
 };
 
