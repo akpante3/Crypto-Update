@@ -1,0 +1,12 @@
+{
+    "functions": {
+      "yourFunctionName": {
+        "memory": 1024,
+        "build": {
+          "scripts": {
+            "preinstall": "npm install --legacy-peer-deps"
+          }
+        }
+      }
+    }
+  }
