@@ -7,7 +7,7 @@ import CoinDetail from "../components/CoinDetail";
 
 const theme = createTheme();
 
-const Coinpage = () => {
+const CoinPage = () => {
   return (
     <ThemeProvider theme={theme}>
       <CoinDetail />
@@ -15,4 +15,4 @@ const Coinpage = () => {
   );
 };
 
-export default Coinpage;
+export default CoinPage;
