@@ -12,7 +12,7 @@ import {
   TableContainer,
   Table,
   Paper,
-  // Pagination,
+  Pagination,
 } from "@mui/material";
 import { styled } from "@mui/system";
 import axios from "axios";
@@ -221,7 +221,7 @@ const CoinsTable = () => {
         </TableContainer>
 
         {/* Comes from @material-ui/lab */}
-        {/* <PaginationContainer>
+       <PaginationContainer>
           <Pagination
             count={(handleSearch()?.length / 10).toFixed(0)}
             style={{
@@ -236,7 +236,7 @@ const CoinsTable = () => {
               window.scroll(0, 450);
             }}
           />
-        </PaginationContainer> */}
+        </PaginationContainer>
       </Container>
     </ThemeProvider>
   );
