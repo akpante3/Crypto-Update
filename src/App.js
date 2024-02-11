@@ -1,7 +1,7 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Header from "./components/Header";
 import Homepage from "./pages/Homepage";
-import CoinPage from "./pages/CoinPage";
+import CoinDetailPage from "./pages/CoinDetailPage";
 import { styled } from "@mui/system";
 
 import "./App.css";
@@ -21,7 +21,7 @@ function App() {
         <Header />
         <Routes>
           <Route path="/" element={<Homepage/>}  />
-          <Route path="/coins/:id" element={<CoinPage/>} />
+          <Route path="/coins/:id" element={<CoinDetailPage/>} />
         </Routes>
       </BrowserRouter>
     </AppContainer>
